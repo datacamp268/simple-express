@@ -15,10 +15,9 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-reverse-proxy .
-  - docker tag simple-reverse-proxy datacamp268/simple-reverse-proxy:latest
+  - docker build -t simple-express .
+  - docker tag simple-express datacamp268/simple-express:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push datacamp268/simple-reverse-proxy
-
+  - docker push datacamp268/simple-express
