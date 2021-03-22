@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reverseproxy
+  name: my-app-2
   labels:
-    app: reverseproxy
+    app: my-app-2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: reverseproxy
+      app: my-app-2
   template:
     metadata:
       labels:
-        app: reverseproxy
+        app: my-app-2
     spec:
       containers:
       - name: simple-express
         image: datacamp268/simple-express
-        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         livenessProbe:
